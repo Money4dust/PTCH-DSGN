@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Pitch Studio — в стиле Chronicle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --accent:#ff3366;
+    --bg:#0d0d0f;
+    --surface:#1a1a1d;
+    --card:#222228;
+    --text:#f5f5f7;
+    --subtle:#9a9aa3;
+    --radius:16px;
+    --font:'SF Pro Display',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.5;}
+  section{padding:100px 20px;max-width:1080px;margin:auto;}
+  h1{font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;}
+  h2{font-size:clamp(28px,4vw,48px);font-weight:600;margin-bottom:60px;text-align:center;letter-spacing:-0.01em;}
+  h3{font-size:24px;font-weight:600;margin-bottom:12px;}
+  p{color:var(--subtle);margin-bottom:20px;font-size:18px;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 36px;border:none;border-radius:var(--radius);font-weight:600;font-size:17px;text-decoration:none;transition:.25s;cursor:pointer;}
+  .btn:hover{transform:translateY(-2px);}
+  /* --- HERO --- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#000 0%,#1a1a2e 45%,#16213e 100%);
+  }
+  .hero p{margin:20px 0 40px;font-size:22px;max-width:600px;}
+  /* --- CARDS --- */
+  .grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+  .card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:var(--radius);
+    padding:40px 32px;
+    transition:.3s;
+  }
+  .card:hover{transform:translateY(-5px);}
+  .card h3{color:var(--text);}
+  /* --- STEPS --- */
+  .steps{display:flex;overflow-x:auto;gap:28px;padding:20px 0;}
+  .step{min-width:220px;flex:1 1 220px;background:var(--surface);padding:30px;border-radius:var(--radius);}
+  .step span{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    width:32px;height:32px;
+    line-height:32px;
+    text-align:center;
+    border-radius:50%;
+    margin-bottom:16px;
+    font-weight:700;
+  }
+  /* --- PRICING --- */
+  .pricing{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .plan{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:var(--radius);
+    padding:48px 40px;
+    text-align:center;
+    position:relative;
+  }
+  .plan.featured{border-color:var(--accent);}
+  .price{font-size:32px;font-weight:700;margin:16px 0;color:var(--accent);}
+  .plan ul{list-style:none;text-align:left;margin:24px 0;}
+  .plan li{margin-bottom:8px;font-size:17px;color:var(--subtle);}
+  /* --- FORM --- */
+  form{
+    max-width:600px;margin:auto;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  input,textarea{
+    background:var(--surface);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:var(--radius);
+    padding:18px 22px;
+    font-size:17px;
+    color:var(--text);
+    font-family:inherit;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);}
+  /* --- FOOTER --- */
+  footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:15px;
+    color:var(--subtle);
+  }
+  /* scroll-bar */
+  ::-webkit-scrollbar{height:6px;}
+  ::-webkit-scrollbar-track{background:var(--surface);}
+  ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Мы продаём не слайды —<br>мы продаём инвестиционное оружие</h1>
+  <p>30+ питч-деков → выход на новые рынки и привлечение инвестиций</p>
+  <a href="#brief" class="btn">Записаться на бриф</a>
+</section>
+
+<!-- ADVANTAGES -->
+<section>
+  <h2>Почему работают именно наши питчи</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🧠 Продуктовый подход + AI</h3>
+      <p>Искусственный интеллект помогает найти слабые точки и усилить сторителлинг.</p>
+    </div>
+    <div class="card">
+      <h3>🔍 Глубокие исследования</h3>
+      <p>Анализируем рынок, фонды и психологию инвесторов до первого слайда.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Сеть 500+ ангелов и VC</h3>
+      <p>Готовые контакты для прямого интро после финального питча.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Скорость: от 5 дней</h3>
+      <p>Быстрые итерации без потери качества — работаем по чёткому фреймворку.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2>Наши услуги</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Дизайн премиум-питчдеков</h3>
+      <p>Визуальная концепция, инфографика, стиль на уровне международных фондов.</p>
+    </div>
+    <div class="card">
+      <h3>Разработка текста питча</h3>
+      <p>Сторителлинг, структура, упаковка сложных идей в простые формулировки.</p>
+    </div>
+    <div class="card">
+      <h3>Подготовка к презентации</h3>
+      <p>Репетиция с экспертом, отработка сложных вопросов, невербальная коммуникация.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section>
+  <h2>Как мы работаем</h2>
+  <div class="steps">
+    <div class="step"><span>1</span>Брифинг и аудит</div>
+    <div class="step"><span>2</span>Информационная архитектура</div>
+    <div class="step"><span>3</span>Визуальная концепция</div>
+    <div class="step"><span>4</span>Дизайн и текст</div>
+    <div class="step"><span>5</span>Итерации и правки</div>
+    <div class="step"><span>6</span>Репетиция питча</div>
+    <div class="step"><span>7</span>Передача пакета</div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section>
+  <h2>Кейсы</h2>
+  <div class="grid">
+    <div class="card"><h3>FinTech Startup</h3><p>Pre-Series A, $4 млн → 12 фондов в сделке</p></div>
+    <div class="card"><h3>MedTech</h3><p>Seed, $1,2 млн → выход на EU рынок</p></div>
+    <div class="card"><h3>AI SaaS</h3><p>Series B, $11 млн → стратегический инвестор</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2>Пакеты услуг</h2>
+  <div class="pricing">
+    <div class="plan">
+      <h3>Start</h3>
+      <p>Seed / Pre-seed</p>
+      <div class="price">3 500–4 500 €</div>
+      <ul>
+        <li>10–12 слайдов</li>
+        <li>Базовый фирстиль</li>
+        <li>Тренинг по презентации</li>
+        <li>5 ч дизайнер-поддержки</li>
+        <li>5–7 дней</li>
+      </ul>
+      <a href="#brief" class="btn">Выбрать</a>
+    </div>
+    <div class="plan featured">
+      <h3>Growth</h3>
+      <p>Раунды A–B</p>
+      <div class="price">6 000–8 000 €</div>
+      <ul>
+        <li>12–15 слайдов</li>
+        <li>Премиум-визуал</li>
+        <li>One-pager</li>
+        <li>10 ч поддержки</li>
+        <li>10–14 дней</li>
+      </ul>
+      <a href="#brief" class="btn">Выбрать</a>
+    </div>
+    <div class="plan">
+      <h3>Investor Ready</h3>
+      <p>Фонды, крупные сделки</p>
+      <div class="price">12 000–15 000 €+</div>
+      <ul>
+        <li>15–20 слайдов</li>
+        <li>Видео-промо</li>
+        <li>Кейсы + One-pager</li>
+        <li>48 ч поддержки</li>
+        <li>21–30 дней</li>
+      </ul>
+      <a href="#brief" class="btn">Выбрать</a>
+    </div>
+  </div>
+</section>
+
+<!-- BRIEF -->
+<section id="brief">
+  <h2 class="center">Записаться на бриф</h2>
+  <form action="https://formspree.io/f/YOUR_ID" method="POST">
+    <input type="text" name="name" placeholder="Имя" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="project" placeholder="Название проекта и стадия">
+    <textarea name="message" rows="4" placeholder="Кратко о продукте и цели питча"></textarea>
+    <button class="btn">Отправить заявку</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Pitch Studio · <a href="mailto:hello@pitchstudio.com" style="color:var(--accent);">hello@pitchstudio.com</a>
+</footer>
+
+<script>
+/* smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
